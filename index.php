@@ -1,21 +1,28 @@
 <?php
 
-class Movies
+class Movie
 {
-
   public $title;
   public $year;
   public $genres;
   public $director;
-  public $actors;
+  public $duration;
+
+  public function getDirector()
+  {
+    return $this->director;
+  }
 }
 
+$inception = new Movie();
+
+$inception->title = "Inception";
+$inception->year = 2015;
+$inception->director = "Christopher Nolan";
+
+var_dump($inception->getDirector());
+
 ?>
-
-
-
-
-
 
 
 <!DOCTYPE html>

@@ -3,6 +3,7 @@
 class Movie
 {
   public $title;
+  public $poster;
   public $year;
   public $director;
   public $duration;
@@ -10,9 +11,10 @@ class Movie
 
   use Rating;
 
-  function __construct($_title, $_year, $_director, $_duration, array $_genres)
+  function __construct($_title, $_poster, $_year, $_director, $_duration, array $_genres)
   {
     $this->title = $_title;
+    $this->poster = $_poster;
     $this->year = $_year;
     $this->director = $_director;
     $this->duration = $_duration;

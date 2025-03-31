@@ -2,7 +2,7 @@
 
 trait Rating
 {
-  public $rating;
+  protected $rating;
 
   public function getRating()
   {

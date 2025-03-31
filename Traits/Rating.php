@@ -17,4 +17,9 @@ trait Rating
       echo "Il rating deve essere tra 1 e 5!";
     }
   }
+
+  public function printStars()
+  {
+    return str_repeat("<i class='fa-solid fa-star'></i>", $this->rating);
+  }
 }

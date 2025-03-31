@@ -12,6 +12,11 @@ class Movie
   {
     return $this->director;
   }
+
+  public function durationOverTwoHours()
+  {
+    return $this->duration > 120;
+  }
 }
 
 $inception = new Movie();
@@ -19,8 +24,9 @@ $inception = new Movie();
 $inception->title = "Inception";
 $inception->year = 2015;
 $inception->director = "Christopher Nolan";
+$inception->duration = 119;
 
-var_dump($inception->getDirector());
+var_dump($inception->durationOverTwoHours());
 
 ?>
 

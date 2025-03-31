@@ -1,48 +1,26 @@
 <?php
 
-class Genre
-{
-  public $name;
+require_once "./Traits/Rating.php";
 
-  function __construct($_name)
-  {
-    $this->name = $_name;
-  }
-};
-
-class Movie
-{
-  public $title;
-  public $year;
-  public $director;
-  public $duration;
-  public $genres;
-
-  function __construct($_title, $_year, $_director, $_duration, array $_genres)
-  {
-    $this->title = $_title;
-    $this->year = $_year;
-    $this->director = $_director;
-    $this->duration = $_duration;
-    $this->genres = $_genres;
-  }
-
-  public function getDirector()
-  {
-    return $this->director;
-  }
-
-  public function durationOverTwoHours()
-  {
-    return $this->duration > 120;
-  }
-}
+require_once "./Models/Genre.php";
+require_once "./Models/Movie.php";
 
 $thriller = new Genre("Thriller");
 $scifi = new Genre("Sci-Fi");
+$action = new Genre("Action");
+$drama = new Genre("Drama");
+$comedy = new Genre("Comedy");
+$horror = new Genre("Horror");
+$romance = new Genre("Romance");
+$fantasy = new Genre("Fantasy");
 
 $inception = new Movie("Inception", 2015, "Christopher Nolan", 143, [$thriller]);
 $matrix = new Movie("The Matrix", 1999, "The Wachowskis", 136, [$scifi, $thriller]);
+
+
+$inception->setRating(3);
+$matrix->setRating(5);
+
 
 var_dump($inception);
 var_dump($matrix)

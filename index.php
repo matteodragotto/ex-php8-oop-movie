@@ -1,6 +1,6 @@
 <?php
 
-class Genres
+class Genre
 {
   public $name;
 
@@ -18,7 +18,7 @@ class Movie
   public $duration;
   public $genres;
 
-  function __construct($_title, $_year, $_director, $_duration, $_genres)
+  function __construct($_title, $_year, $_director, $_duration, array $_genres)
   {
     $this->title = $_title;
     $this->year = $_year;
@@ -38,9 +38,14 @@ class Movie
   }
 }
 
-$inception = new Movie("Inception", 2015, "Christopher Nolan", 143, "Thriller");
+$thriller = new Genre("Thriller");
+$scifi = new Genre("Sci-Fi");
+
+$inception = new Movie("Inception", 2015, "Christopher Nolan", 143, [$thriller]);
+$matrix = new Movie("The Matrix", 1999, "The Wachowskis", 136, [$scifi, $thriller]);
 
 var_dump($inception);
+var_dump($matrix)
 
 ?>
 

@@ -1,5 +1,15 @@
 <?php
 
+class Genres
+{
+  public $name;
+
+  function __construct($_name)
+  {
+    $this->name = $_name;
+  }
+};
+
 class Movie
 {
   public $title;

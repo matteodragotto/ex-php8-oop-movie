@@ -4,9 +4,18 @@ class Movie
 {
   public $title;
   public $year;
-  public $genres;
   public $director;
   public $duration;
+  public $genres;
+
+  function __construct($_title, $_year, $_director, $_duration, $_genres)
+  {
+    $this->title = $_title;
+    $this->year = $_year;
+    $this->director = $_director;
+    $this->duration = $_duration;
+    $this->genres = $_genres;
+  }
 
   public function getDirector()
   {
@@ -19,14 +28,9 @@ class Movie
   }
 }
 
-$inception = new Movie();
+$inception = new Movie("Inception", 2015, "Christopher Nolan", 143, "Thriller");
 
-$inception->title = "Inception";
-$inception->year = 2015;
-$inception->director = "Christopher Nolan";
-$inception->duration = 119;
-
-var_dump($inception->durationOverTwoHours());
+var_dump($inception);
 
 ?>
 

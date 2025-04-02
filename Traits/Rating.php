@@ -20,6 +20,9 @@ trait Rating
 
   public function printStars()
   {
-    return str_repeat("<i class='fa-solid fa-star'></i>", $this->rating);
+    $maxRating = 5;
+    $fullRating = $maxRating - $this->rating;
+
+    return str_repeat("<i class='fa-solid fa-star'></i>", $this->rating) . str_repeat("<i class='fa-regular fa-star'></i>", $fullRating);
   }
 }
